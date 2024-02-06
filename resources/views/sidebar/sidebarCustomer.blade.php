@@ -41,20 +41,20 @@
         </li>
         <p style="color: gray; margin-left : 10px ">Riwayat</p>
         <li class="nav-item">
-          <a class="nav-link {{ $aksi == 'laporanTopUp'  ? 'active': '' }}" href="/customer/keranjang" style="font-size: 15px">
+          <a class="nav-link {{ $aksi == 'laporanTopUp'  ? 'active': '' }}" href="{{ route('laporanTopUp.customer') }}" style="font-size: 15px">
             <span data-feather="file-text" style="width: 25px; height: 25px;"></span>
             Laporan Top up
           </a>
         </li>
        
         <li class="nav-item">
-          <a class="nav-link {{ $aksi == 'laporanTarikTunai'  ? 'active': '' }}" href="/customer/keranjang" style="font-size: 15px">
+          <a class="nav-link {{ $aksi == 'laporanTarikTunai'  ? 'active': '' }}" href="{{ route('laporanWithdraw.customer') }}" style="font-size: 15px">
             <span data-feather="file-text" style="width: 25px; height: 25px;"></span>
             Laporan Tarik Tunai
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ $aksi == 'laporanTarikTunai'  ? 'active': '' }}" href="/customer/keranjang" style="font-size: 15px">
+          <a class="nav-link {{ $aksi == 'laporanTarikTunai'  ? 'active': '' }}" href="{{ route('laporanTransaksi.customer') }}" style="font-size: 15px">
             <span data-feather="file-text" style="width: 25px; height: 25px;"></span>
             Laporan Transaksi
           </a>

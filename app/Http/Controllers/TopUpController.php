@@ -76,5 +76,29 @@ class TopUpController extends Controller
 
         return redirect()->route('tampilWithDraw')->with('success', ' Permintaan Withdraw berhasil dikirim, menunggu konfirmasi...');
 }   
+
+   public function laporanTopUpCustomer()
+   {
+    return view('user.customer.riwayat.laporanTopUp',[
+        'aksi' => 'laporanTopUp',
+        'title' => 'Customer',
+        'name' => auth()->user()->name,
+        'pesan' => TopUp::where('id_saldo',auth()->user()->id)->get(),
+
+    ]);
+   }
+   public function laporanWithdrawCustomer()
+   {
+    return view('user.customer.riwayat.laporanTarikTunai',[
+        'aksi' => 'laporanWithdraw',
+        'title' => 'Customer',
+        'name' => auth()->user()->name,
+        'pesan' => Withdraw::where('id_saldo',auth()->user()->id)->get(),
+
+    ]);
+   }
+  
     }
+
+
 

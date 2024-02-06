@@ -15,6 +15,6 @@ class Produk extends Model
     }
     public function keranjang()
     {
-        return $this->belongsTo(Keranjang::class, 'id_produk');
+        sidreturn $this->belongsTo(Keranjang::class, 'id_produk');
     }
 }

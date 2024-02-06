@@ -11,10 +11,10 @@ class Transaksi extends Model
     protected $guarder = [];
     public function  keranjang()
     {
-        $this->hasMany(Keranjang::class, 'id_transaksi');
+        return $this->hasMany(Keranjang::class, 'id_transaksi');
     }
     public function user()
     {
-        $this->belongsTo(User::class, 'id_user');
+       return  $this->belongsTo(User::class, 'id_user');
     }
 }

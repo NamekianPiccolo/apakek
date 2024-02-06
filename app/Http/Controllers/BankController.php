@@ -48,7 +48,7 @@ public function ditolak(Request $request){
     $topUp->save();
     return redirect()->route('bank.index')->with('success', ' Permaintaan saldo berhasil Ditolak.');
 }
-public function laporanTopUp(){
+public function laporanTopUp(Request $request){
         return view('user.bank.riwayat.laporanTopUp',[
             'aksi' => 'laporanTopUp',
             'title' => 'Bank',
@@ -100,13 +100,14 @@ public function ditolakWithdraw(Request $request){
     return redirect()->route('bank.withdraw')->with('success', 'Konfirmasi permintaan Withdraw berhasil Ditolak.');
 }
 
-public function laporanWithdraw(){
+public function laporanWithdraw(Request $request){
     return view('user.bank.riwayat.laporanWithdraw',[
-        'aksi' => 'laporanWithdraw',
+        'aksi' => 'laporanTopUp',
         'title' => 'Bank',
         'name' => auth()->user()->name,
-        'pesan' => Withdraw::all()
+        'pesan' => TopUp::all()
     ]);
 }
+
 
 }

@@ -39,6 +39,9 @@ Route::middleware(['auth','akses:customer'])->group(function(){
     Route::get('/invoice/{no_transaksi}',[TransaksiController::class,'invoice']);
     Route::get('/cetak/{no_transaksi}',[TransaksiController::class,'cetak']);
     Route::get('/tampilWithDraw',[TopUpController::class,'tampilTarikTunai'])->name('tampilWithDraw');
+    Route::get('/laporanTopUp/customer',[TopUpController::class,'laporanTopUpCustomer'])->name('laporanTopUp.customer');
+    Route::get('/laporanTarikTunai/customer',[TopUpController::class,'laporanWithdrawCustomer'])->name('laporanWithdraw.customer');
+    Route::get('/laporantransaksi/customer',[TransaksiController::class,'laporanTransaksiCustomer'])->name('laporanTransaksi.customer');
     Route::post('/WithDraw',[TopUpController::class,'withdraw'])->name('customer.withdraw');
     
 });

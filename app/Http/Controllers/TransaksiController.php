@@ -98,4 +98,14 @@ class TransaksiController extends Controller
             ]);
         }
     }
+    public function laporanTransaksiCustomer()
+    {
+     return view('user.customer.riwayat.laporanTransaksi',[
+         'aksi' => 'laporanWithdraw',
+         'title' => 'Customer',
+         'name' => auth()->user()->name,
+         'pesan' => Transaksi::where('id_user',auth()->user()->id)->get(),
+ 
+     ]);
+    }
 }
